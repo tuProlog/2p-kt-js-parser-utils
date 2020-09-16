@@ -1,0 +1,24 @@
+image: pikalab/ci:arch-jre14-node14
+
+cache:
+  paths:
+    - node_modules/
+    - src-gen/
+
+Test:
+  stage: test
+  script: 
+    - npm install
+    - npm run compile-grammar
+    - npm test
+
+Release:
+  stage: deploy
+  script: 
+    - npm install
+    - npm run compile-grammar
+    - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+    - npm publish
+  only:
+    - /^(master)|(release)$/
+

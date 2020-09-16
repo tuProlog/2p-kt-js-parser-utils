@@ -1,0 +1,21 @@
+{
+  "name": "@tuprolog/parser-utils",
+  "version": "0.2.1",
+  "description": "Parsing utilis for Prolog in JS environments",
+  "main": "index.js",
+  "scripts": {
+    "compile-grammar": "antlr4-tool -o src-gen -l javascript antlr/PrologLexer.g4 && antlr4-tool -o src-gen -l javascript antlr/PrologParser.g4",
+    "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
+  },
+  "keywords": [
+    "2p-kt"
+  ],
+  "author": "tuProlog",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "antlr4": "^4.8.0"
+  },
+  "devDependencies": {
+    "antlr4-tool": "^1.1.1"
+  }
+}
