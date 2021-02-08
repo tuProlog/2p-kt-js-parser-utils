@@ -3,6 +3,7 @@
   "version": "0.2.4",
   "description": "Parsing utilis for Prolog in JS environments",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "compile-grammar": "curl https://www.antlr.org/download/antlr-4.9.1-complete.jar --output antlr.jar && java -jar antlr.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologLexer.g4 && java -jar antlr.jar -visitor -lib src-gen/antlr -o src-gen -Dlanguage=JavaScript antlr/PrologParser.g4 && mv src-gen/antlr/* src-gen/ && rmdir src-gen/antlr",
     "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
