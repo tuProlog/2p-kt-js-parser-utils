@@ -1,8 +1,8 @@
 lexer grammar PrologLexer;
 
 @header {
-var DynamicLexer = require("../src/DynamicLexer").DynamicLexer
-var StringType = require("../src/StringType").StringType
+import { DynamicLexer } from "../src/DynamicLexer.js"
+import {StringType } from "../src/StringType.js"
 }
 
 @members {

@@ -1,7 +1,7 @@
 import { InputStream } from "antlr4";
-import { PrologLexer as Lexer } from "../index";
+import { PrologLexer as Lexer } from "../index.js";
 import assert from 'assert';
-import { StringType } from "../index";
+import { StringType } from "../index.js";
 
 function testVariables(){
     let input = "_ + A + _B is _1 + _a + _+"

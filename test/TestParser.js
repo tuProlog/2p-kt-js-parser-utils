@@ -1,6 +1,6 @@
 import { CommonTokenStream as _CommonTokenStream, CharStreams } from "antlr4";
-import { PrologLexer } from "../index";
-import { PrologParser } from "../index";
+import { PrologLexer } from "../index.js";
+import { PrologParser } from "../index.js";
 const CommonTokenStream = _CommonTokenStream;
 
 let input = "f(X)";

@@ -5,8 +5,8 @@ options {
 }
 
 @header {
-var DynamicParser = require("../src/DynamicParser").DynamicParser
-var Associativity = require("../src/Associativity").Associativity
+import { DynamicParser } from "../src/DynamicParser.js"
+import { Associativity } from "../src/Associativity.js"
 
 var P0 = 1201;
 var TOP = 1200;

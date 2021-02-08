@@ -1,4 +1,4 @@
-const Associativity = require("./Associativity").Associativity;
+import { Associativity } from "./Associativity.js";
 
 const OP = 0;
 const ASSOCIATIVITY = 1;
@@ -169,4 +169,5 @@ function DynamicParser(input) {
 
 }
 
-exports.DynamicParser = DynamicParser;
+const _DynamicParser = DynamicParser;
+export { _DynamicParser as DynamicParser };

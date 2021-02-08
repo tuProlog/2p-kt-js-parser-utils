@@ -3,4 +3,5 @@ const StringType = Object.freeze({
     DOUBLE_QUOTED: 1
 });
 
-exports.StringType = StringType;
+const _StringType = StringType;
+export { _StringType as StringType };
