@@ -4,7 +4,7 @@
   "description": "Parsing utilis for Prolog in JS environments",
   "main": "index.js",
   "scripts": {
-    "compile-grammar": "wget https://www.antlr.org/download/antlr-4.9.1-complete.jar && java -jar antlr-4.9.1-complete.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologLexer.g4 && java -jar antlr-4.9.1-complete.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologParser.g4",
+    "compile-grammar": "curl https://www.antlr.org/download/antlr-4.9.1-complete.jar --output antlr.jar && java -jar antlr.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologLexer.g4 && java -jar antlr.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologParser.g4",
     "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
   },
   "keywords": [
