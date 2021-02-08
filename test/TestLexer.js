@@ -1,11 +1,11 @@
-const antlr4 = require("antlr4");
-const Lexer = require("../index").PrologLexer;
-const assert = require('assert');
-const StringType = require("../index").StringType;
+import { InputStream } from "antlr4";
+import { PrologLexer as Lexer } from "../index";
+import assert from 'assert';
+import { StringType } from "../index";
 
 function testVariables(){
     let input = "_ + A + _B is _1 + _a + _+"
-    let chars = new antlr4.InputStream(input);
+    let chars = new InputStream(input);
     let lexer = new Lexer(chars);
     lexer.addOperators("+", "is")
     let tokens = new Array()
@@ -45,7 +45,7 @@ function testVariables(){
 
 function testOperators(){
     let input = "1 + a :- b + c oo d"
-    let chars = new antlr4.InputStream(input);
+    let chars = new InputStream(input);
     let lexer = new Lexer(chars);
     //Must be empty
     console.log("Operators: " + lexer.getOperators())
@@ -89,7 +89,7 @@ function testOperators(){
 
 function testAtoms(){
     let input = "1 + a + \"b\" + 'c'"
-    let chars = new antlr4.InputStream(input);
+    let chars = new InputStream(input);
     let lexer = new Lexer(chars);
     let tokens = new Array()
     let types = new Array()

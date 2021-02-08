@@ -1,10 +1,10 @@
-const antlr4 = require("antlr4");
-const PrologLexer = require("../index").PrologLexer;
-const PrologParser = require("../index").PrologParser;
-const CommonTokenStream = antlr4.CommonTokenStream;
+import { CommonTokenStream as _CommonTokenStream, CharStreams } from "antlr4";
+import { PrologLexer } from "../index";
+import { PrologParser } from "../index";
+const CommonTokenStream = _CommonTokenStream;
 
 let input = "f(X)";
-let chars = antlr4.CharStreams.fromString(input);
+let chars = CharStreams.fromString(input);
 console.log(chars);
 let lexer = new PrologLexer(chars);
 console.log(lexer);
