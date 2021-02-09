@@ -1,8 +1,8 @@
-export { Associativity } from './src/Associativity.js';
-export { DynamicLexer } from './src/DynamicLexer.js';
-export { DynamicParser } from './src/DynamicParser.js';
-export { StringType } from './src/StringType.js';
-export { default as PrologLexer } from './src-gen/PrologLexer.js';
-export { default as PrologParser } from './src-gen/PrologParser.js';
-export { default as PrologParserVisitor } from './src-gen/PrologParserVisitor.js';
-export { default as PrologParserListener } from './src-gen/PrologParserListener.js';
+exports.Associativity = require('./src/Associativity').Associativity;
+exports.DynamicLexer = require('./src/DynamicLexer').DynamicLexer;
+exports.DynamicParser = require('./src/DynamicParser').DynamicParser;
+exports.StringType = require('./src/StringType').StringType;
+exports.PrologLexer = require('./src-gen/PrologLexer').default;
+exports.PrologParser = require('./src-gen/PrologParser').default;
+exports.PrologParserVisitor = require('./src-gen/PrologParserVisitor').default;
+exports.PrologParserListener = require('./src-gen/PrologParserListener').default;

@@ -1,33 +1,34 @@
-import { Associativity as _Associativity, DynamicLexer as _DynamicLexer, DynamicParser as _DynamicParser, StringType as _StringType, PrologLexer as _PrologLexer, PrologParser as _PrologParser, PrologParserListener as _PrologParserListener, PrologParserVisitor as _PrologParserVisitor } from "../index.js";
+const ParsingUtils = require("../index.js");
 
-if (_Associativity === undefined) {
+
+if (ParsingUtils.Associativity === undefined) {
     throw "missing reference to " + Associativity;
 }
 
-if (_DynamicLexer === undefined) {
+if (ParsingUtils.DynamicLexer === undefined) {
     throw "missing reference to " + DynamicLexer;
 }
 
-if (_DynamicParser === undefined) {
+if (ParsingUtils.DynamicParser === undefined) {
     throw "missing reference to " + DynamicParser;
 }
 
-if (_StringType === undefined) {
+if (ParsingUtils.StringType === undefined) {
     throw "missing reference to " + StringType;
 }
 
-if (_PrologLexer === undefined) {
+if (ParsingUtils.PrologLexer === undefined) {
     throw "missing reference to " + PrologLexer;
 }
 
-if (_PrologParser === undefined) {
+if (ParsingUtils.PrologParser === undefined) {
     throw "missing reference to " + PrologParser;
 }
 
-if (_PrologParserListener === undefined) {
+if (ParsingUtils.PrologParserListener === undefined) {
     throw "missing reference to " + PrologParserListener;
 }
 
-if (_PrologParserVisitor === undefined) {
+if (ParsingUtils.PrologParserVisitor === undefined) {
     throw "missing reference to " + PrologParserVisitor;
 }

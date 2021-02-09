@@ -13,4 +13,4 @@ const Associativity = Object.freeze({
 });
 
 
-export { Associativity };
+exports.Associativity = Associativity;

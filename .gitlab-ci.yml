@@ -5,6 +5,7 @@ Test:
   script: 
     - npm install
     - npm run compile-grammar
+    - npm run transpile-grammar
     - npm test
 
 Release:
@@ -12,6 +13,7 @@ Release:
   script: 
     - npm install
     - npm run compile-grammar
+    - npm run transpile-grammar
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
     - npm publish --tag beta
   only:
