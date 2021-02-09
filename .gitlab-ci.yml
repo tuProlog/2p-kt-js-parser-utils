@@ -13,7 +13,4 @@ Release:
     - npm install
     - npm run compile-grammar
     - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-    - npm publish
-  only:
-    - /^(master)|(release)$/
-
+    - npm publish --tag beta
