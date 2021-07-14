@@ -1,6 +1,6 @@
 {
   "name": "@tuprolog/parser-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Parsing utilis for Prolog in JS environments",
   "main": "index.js",
   "scripts": {
