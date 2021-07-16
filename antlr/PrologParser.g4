@@ -161,7 +161,7 @@ locals[isNum, isVar, isList, isStruct, isExpr, isBlock]
     | variable { $isVar = true; }
     | structure { $isStruct = true; }
     | list { $isList = true;  }
-    | set { $isBlock = true;  }
+    | block { $isBlock = true;  }
     ;
 
 number
