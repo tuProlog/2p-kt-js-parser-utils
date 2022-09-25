@@ -13,7 +13,7 @@
   "author": "tuProlog",
   "license": "Apache-2.0",
   "dependencies": {
-    "antlr4": "4.8.0"
+    "antlr4": "4.11.0"
   },
   "devDependencies": {
     "antlr4-tool": "1.1.1"
