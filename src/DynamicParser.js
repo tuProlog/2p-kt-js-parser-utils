@@ -1,10 +1,3 @@
-const Associativity = require("./Associativity").Associativity;
-
-const OP = 0;
-const ASSOCIATIVITY = 1;
-const PRIORITY = 2;
-
-
 const enableLogging = false;
 
 function log(...args) {
@@ -169,4 +162,4 @@ function DynamicParser(input) {
 
 }
 
-exports.DynamicParser = DynamicParser;
+export { DynamicParser }

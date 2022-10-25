@@ -1,10 +1,11 @@
 {
   "name": "@tuprolog/parser-utils",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Parsing utilis for Prolog in JS environments",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "compile-grammar": "curl https://www.antlr.org/download/antlr-4.9.1-complete.jar --output antlr.jar && java -jar antlr.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologLexer.g4 && java -jar antlr.jar -visitor -lib src-gen/antlr -o src-gen -Dlanguage=JavaScript antlr/PrologParser.g4 && mv src-gen/antlr/* src-gen/ && rmdir src-gen/antlr",
+    "compile-grammar": "curl https://www.antlr.org/download/antlr-4.11.0-complete.jar --output antlr.jar && java -jar antlr.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologLexer.g4 && java -jar antlr.jar -visitor -lib src-gen/antlr -o src-gen -Dlanguage=JavaScript antlr/PrologParser.g4 && mv src-gen/antlr/* src-gen/ && rmdir src-gen/antlr",
     "transpile-grammar": "npx babel src-gen -d src-gen",
     "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
   },
@@ -14,12 +15,12 @@
   "author": "tuProlog",
   "license": "Apache-2.0",
   "dependencies": {
-    "antlr4": "4.9.1"
+    "antlr4": "4.11.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/plugin-proposal-class-properties": "^7.12.13",
-    "@babel/preset-env": "^7.12.13"
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.19.3",
+    "@babel/plugin-proposal-class-properties": "^7.19.3",
+    "@babel/preset-env": "^7.19.3"
   }
 }

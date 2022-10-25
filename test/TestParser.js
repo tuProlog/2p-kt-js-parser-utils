@@ -1,6 +1,8 @@
-const antlr4 = require("antlr4");
-const PrologLexer = require("../index").PrologLexer;
-const PrologParser = require("../index").PrologParser;
+import antlr4 from 'antlr4';
+import {
+    PrologLexer,
+    PrologParser,
+} from "../index.js";
 const CommonTokenStream = antlr4.CommonTokenStream;
 
 

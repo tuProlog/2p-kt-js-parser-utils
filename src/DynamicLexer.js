@@ -1,4 +1,4 @@
-const StringType = require("./StringType").StringType;
+import { StringType } from "./StringType.js";
 
 const enableLogging = false;
 
@@ -119,4 +119,4 @@ function DynamicLexer() {
 
 }
 
-exports.DynamicLexer = DynamicLexer;
+export { DynamicLexer }

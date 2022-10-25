@@ -1,0 +1,39 @@
+name: check
+on:
+  push:
+    tags: '*'
+    branches-ignore:
+      - 'autodelivery**'
+      - 'bump-**'
+      - 'dependabot/**'
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - 'renovate.json'
+      - '.gitignore'
+  pull_request:
+  workflow_dispatch:
+env:
+  PROJECT_NAME: 2p-kt-js-parser-utils
+  WORKFLOW: check
+jobs:
+  run-unit-tests:
+    runs-on: ubuntu-latest
+    name: Run tests
+    timeout-minutes: 45
+    concurrency:
+      group: ${{ github.workflow }}-run-unit-tests-${{ github.event.number || github.ref }}
+      cancel-in-progress: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Restore NPM dependencies
+        run: npm install
+
+      - name: Regenerate Code
+        run: npm run compile-grammar
+
+      - name: Test
+        run: npm test
