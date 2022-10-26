@@ -1,0 +1,86 @@
+name: deploy
+on:
+  workflow_run:
+    workflows:
+      - check
+    types:
+      - completed
+    branches:
+      - master
+env:
+  PROJECT_NAME: 2p-kt-js-parser-utils
+  WORKFLOW: deploy
+jobs:
+  github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success'
+    outputs:
+      version: ${{ steps.get-version.outputs.version }}
+    timeout-minutes: 120
+    concurrency:
+      # Only one release job at a time. Strictly sequential.
+      group: release-github
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Restore NPM dependencies
+        run: npm install
+
+      - name: Regenerate Code
+        run: npm run generate
+
+      - name: Transpile Grammar
+        run: npm run transpile-grammar
+
+      - name: Pack
+        run: npm pack
+
+      - name: Release Assets
+        id: upload-release-assets
+        run: |
+          set -x
+          ASSETS=()
+          for A in *.tgz; do
+            ASSETS+=("-a" "$A")
+            echo "Releasing $A"
+          done
+          hub release create "${ASSETS[@]}" -m "$RELEASE_TAG" "$RELEASE_TAG"
+        env:
+          RELEASE_TAG: ${{ steps.get-version.outputs.version }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy-on-npm:
+    runs-on: ubuntu-latest
+    name: Deploy on NPM
+    if: github.event.workflow_run.conclusion == 'success'
+    # && github.event.ref_type == 'tag'
+    timeout-minutes: 120
+    concurrency:
+      # Only one release job at a time. Strictly sequential.
+      group: release-npm
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Restore NPM dependencies
+        run: npm install
+
+      - name: Regenerate Code
+        run: npm run generate
+
+      - name: Transpile Grammar
+        run: npm run transpile-grammar
+
+      - name: NPM Login
+        run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: NPM Publish
+        run: npm publish
