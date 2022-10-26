@@ -1,12 +1,12 @@
 {
   "name": "@tuprolog/parser-utils",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Parsing utilis for Prolog in JS environments",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "generate": "node scripts/generate-code.js",
-    "compile-grammar": "curl https://www.antlr.org/download/antlr-4.11.0-complete.jar --output antlr.jar && java -jar antlr.jar -visitor -o src-gen -Dlanguage=JavaScript antlr/PrologLexer.g4 && java -jar antlr.jar -visitor -lib src-gen/antlr -o src-gen -Dlanguage=JavaScript antlr/PrologParser.g4 && mv src-gen/antlr/* src-gen/ && rmdir src-gen/antlr",
+    "print-version": "node scripts/print-version.js",
     "transpile-grammar": "npx babel src-gen -d src-gen",
     "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
   },

@@ -39,6 +39,10 @@ jobs:
       - name: Pack
         run: npm pack
 
+      - name: Get Version
+        id: get-version
+        run: echo ::set-output name=version::$(npm run print-version | tail -n 1)
+
       - name: Release Assets
         id: upload-release-assets
         run: |
