@@ -1,9 +1,8 @@
-import antlr4 from 'antlr4';
-import {
-    PrologLexer as Lexer,
-    StringType
-} from "../index.js";
-import assert from 'assert';
+const antlr4 = require("antlr4");
+const Lexer = require("../index").PrologLexer;
+const assert = require('assert');
+const StringType = require("../index").StringType;
+
 
 function testVariables(){
     let input = "_ + A + _B is _1 + _a + _+"
@@ -122,3 +121,7 @@ function testAtoms(){
 testOperators()
 testVariables()
 testAtoms()
+
+
+
+

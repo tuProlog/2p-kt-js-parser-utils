@@ -2,12 +2,11 @@ lexer grammar PrologLexer;
 
 @header {
 import { DynamicLexer } from "../src/DynamicLexer.js"
-import {StringType } from "../src/StringType.js"
+import { StringType } from "../src/StringType.js"
 }
 
 @members {
 DynamicLexer.call(this);
-
 }
 
 tokens { VARIABLE }

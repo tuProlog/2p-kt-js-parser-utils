@@ -28,7 +28,7 @@ var INFIX = Associativity.INFIX;
 }
 
 @members {
-   DynamicParser.call(this,input);
+DynamicParser.call(this,input);
 }
 
 singletonTerm
