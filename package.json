@@ -3,10 +3,9 @@
   "version": "0.5.0",
   "description": "Parsing utilis for Prolog in JS environments",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "generate": "node scripts/generate-code.js",
-    "print-version": "node scripts/print-version.js",
+    "generate": "node scripts/generate-code.mjs",
+    "print-version": "node scripts/print-version.mjs",
     "transpile-grammar": "npx babel src-gen -d src-gen",
     "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
   },
@@ -16,12 +15,15 @@
   "author": "tuProlog",
   "license": "Apache-2.0",
   "dependencies": {
-    "antlr4": "4.11.0"
+    "antlr4": "4.9.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
     "@babel/core": "^7.19.3",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/preset-env": "^7.19.3"
+  },
+  "x-versions": {
+    "antlr": "4.11.1"
   }
 }
