@@ -7,6 +7,9 @@
     "generate": "node scripts/generate-code.mjs",
     "print-version": "node scripts/print-version.mjs",
     "transpile-grammar": "npx babel src-gen -d src-gen",
+    "transpile-tests": "npx babel test -d test",
+    "transpile-sources": "npx babel src -d src && npx babel index.js -d . && npx babel test -d test",
+    "transpile": "npm run transpile-grammar && npm run transpile-sources",
     "test": "node test/TestImport.js && node test/TestLexer.js && node test/TestParser.js"
   },
   "keywords": [
