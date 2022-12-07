@@ -3,4 +3,9 @@ test/
 *.md
 *.yml
 *.jar
-
+.github/
+.gitignore
+renovate.json
+package-lock.json
+babel.config.json
+scripts/

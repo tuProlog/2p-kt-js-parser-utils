@@ -33,8 +33,8 @@ jobs:
       - name: Regenerate Code
         run: npm run generate
 
-      - name: Transpile Grammar
-        run: npm run transpile-grammar
+      - name: Transpile Code
+        run: npm run transpile
 
       - name: Pack
         run: npm pack
@@ -78,8 +78,8 @@ jobs:
       - name: Regenerate Code
         run: npm run generate
 
-      - name: Transpile Grammar
-        run: npm run transpile-grammar
+      - name: Transpile Code
+        run: npm run transpile
 
       - name: NPM Login
         run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc

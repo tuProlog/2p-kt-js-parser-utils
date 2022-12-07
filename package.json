@@ -27,6 +27,6 @@
     "@babel/preset-env": "^7.19.3"
   },
   "x-versions": {
-    "antlr": "4.11.1"
+    "antlr": "4.9.3"
   }
 }

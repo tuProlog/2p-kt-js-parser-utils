@@ -35,5 +35,8 @@ jobs:
       - name: Regenerate Code
         run: npm run generate
 
+      - name: Transpile Code
+        run: npm run transpile
+
       - name: Test
         run: npm test
