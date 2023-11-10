@@ -18,7 +18,7 @@
   "author": "tuProlog",
   "license": "Apache-2.0",
   "dependencies": {
-    "antlr4": "4.9.3"
+    "antlr4": "4.13.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
